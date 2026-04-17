@@ -84,6 +84,7 @@ drwxr-sr-x  2 root    users 126976 Apr 12 16:50 ipcam_repo/*.mkv files
 drwxr-sr-x  2 root    root    4096 Jan  7  2024 media
 
 AppData:
+```
 pjmd@omv-nas:/srv/dev-disk-by-uuid-a77d5d6f-f6d9-436a-a5a7-12810fa8cc53/appdata $ ll
 total 28
 drwxrwsr-x+ 6 root users 4096 Aug 28  2025  .
@@ -101,8 +102,9 @@ drwxrwsr-x+ 6 root users 4096 Aug 28  2025 ..
 -rwxrwxr-x+ 1 root users 1922 Sep 13  2025 save-monitor-rtsp-stream.sh
 -rwxrwxr-x+ 1 root users 1607 Sep  5  2025 save-monitor-rtsp-stream.sh.bak
 -rwxrwxr-x+ 1 root users  759 Aug 30  2025 save-rtsp-stream.sh
+```
 
-
+```
 appuser@omv-nas:/home/pjmd$ id
 uid=1002(appuser) gid=100(users) groups=100(users)
 
@@ -110,8 +112,11 @@ uid=1002(appuser) gid=100(users) groups=100(users)
 Password:
 $ id
 uid=1005(jelly) gid=100(users) groups=100(users)
+```
 
+In /etc/passwd:
 
+```
 admin 998::100
 omv-notify 997::991
 omv-webui 999:992
@@ -121,7 +126,7 @@ appuser 1002
 minimac 1003
 pjmd2 1004
 jelly 1005
-
+```
 
 ### OMV8
 
@@ -145,16 +150,17 @@ drwx-----x 2 root root 4096 Apr 13 21:33 volumes
 
 I decided to move it to the old location **/srv/dev-disk-by-uuid-a77d5d6f-f6d9-436a-a5a7-12810fa8cc53/docker/**
 
-#### Addidnge uses on new system
+#### Adding users to new system
 
 The user ids didn't match the old system so I manually change them in /etc/passwd
-
+```
 pjmd:x:1000:100:philippe,,,:/home/pjmd:/usr/bin/bash
 minimac:x:1001:100::/home/minimac:/usr/bin/sh
 beverly:x:1002:100::/home/beverly:/usr/bin/sh   -->old appuser
 appuser:x:1003:100::/home/appuser:/usr/bin/bash
 jelly:x:1004:100::/home/jelly:/usr/bin/bash      -->old 1005
 pjmd2:x:1005:100::/home/pjmd2:/usr/bin/bash
+```
 
 #### OMV8 Issues
 
@@ -174,12 +180,12 @@ disabled
 /srv/dev-disk-by-uuid-a77d5d6f-f6d9-436a-a5a7-12810fa8cc53/data/media
 /srv/dev-disk-by-uuid-a77d5d6f-f6d9-436a-a5a7-12810fa8cc53/appdata/jellyfin/config
 ```
- * 2.1) format error is due to the container/image were arm (RPI aarch64) insteadof amd64
+   * 2.1) format error is due to the container/image were arm (RPI aarch64) insteadof amd64
 
- * 2.2) the version set in compose file was latest at the time 10.10.7 now in 2026/04 latest is 10.11.8 and the migration breaks.  
-     To migrate it seems necessary to transit by some other version
+   * 2.2) the version set in compose file was latest at the time 10.10.7 now in 2026/04 latest is 10.11.8 and the migration breaks.  
+     To migrate it seems necessary to transit by some other version.
    
-Solution: reinstalled the backup copies of system.xml and migrations.xml to the current files
+     Solution: reinstalled the backup copies of system.xml and migrations.xml to the current files and the versiom to 10.10.7
 
 * 3) Timemachine
      I decided to limit user minimac to 1 TB on timemachine FS. It was a mistake because timemachine would backup up 42 GB and fail.
