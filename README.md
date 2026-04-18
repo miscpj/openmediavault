@@ -48,7 +48,7 @@ Maybe a better alternative would have been to use [restricted Gmail SMTP server]
 
 
 
-## Migation from RPI OMV 6 to mini-hp PC OMV 8 (current version in 2026 04 12)
+## Migration from RPI OMV 6 to mini-hp PC OMV 8 (current version in 2026 04 12)
 
 Unfortunately I could use **omv-release-upgrade** to upgrade OMV 6 to OMV 7,  and then from 7 to 8 on RPI, 6 being too old
 
@@ -191,5 +191,22 @@ disabled
      I decided to limit user minimac to 1 TB on timemachine FS. It was a mistake because timemachine would backup up 42 GB and fail.
 
      To set Timamachine up I had tO:
-     * to map an tework drive on the mac for user minimac to FS timemachine
+     * to map an network drive on the mac for user minimac to FS timemachine
      * Encryption was for use minimac as well
+    
+## Timemachine
+
+* Mapped an network drive on the mac for **user minimac** to **FS timemachine**
+  I didn't map the drive from **Finder** but directly from **Time machine Settings**.
+  I actually re-mapped a drive I created and deleted previously.
+  It gave me the opportunity to **disable encryption** and set up a **quota to 1TB**
+* Did not set a quota in OMV **Storage | File Systems | Quota**
+
+It is also possible to set a timemachine quota from the mac terminal
+```
+sudo tmutil setquota {ID} {SIZE_IN_GB}
+
+You can determine the ID with
+
+sudo tmutil destinationinfo
+```
