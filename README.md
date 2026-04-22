@@ -150,6 +150,8 @@ drwx-----x 2 root root 4096 Apr 13 21:33 volumes
 
 I decided to move it to the old location **/srv/dev-disk-by-uuid-a77d5d6f-f6d9-436a-a5a7-12810fa8cc53/docker/**
 
+From the doc it seems like a good idea to not put on the OS FS the docker folder.
+
 #### Adding users to new system
 
 The user ids didn't match the old system so I manually change them in /etc/passwd
@@ -193,7 +195,12 @@ disabled
      To set Timamachine up I had tO:
      * to map an network drive on the mac for user minimac to FS timemachine
      * Encryption was for use minimac as well
-    
+
+## Jellyfin
+
+I decided to upgrade jellyfin to the latest version which is a this time 2026/04/20 10.11.8
+admin being pjmd.
+
 ## Timemachine
 
 * Mapped an network drive on the mac for **user minimac** to **FS timemachine**
