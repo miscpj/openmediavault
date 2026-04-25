@@ -221,7 +221,7 @@ sudo tmutil destinationinfo
 ## Backing up during off hours (at night!)
 
 The idea so far is to:
-* configure urbackup to start backups at night e.g. 2 AM - 2-4/1-7
+* configure urbackup to start backups at night: Settings tab | Client | Backup Window e.g. 2 AM - 1-7/2-4
 * Wake On Lan my Windows PC from OMV using [etherwake](https://www.cyberciti.biz/tips/linux-send-wake-on-lan-wol-magic-packets.html)
 
 For windows to respond to WOL requests I need to:
