@@ -155,6 +155,9 @@ From the doc it seems like a good idea to not put on the OS FS the docker folder
 #### Adding users to new system
 
 The user ids didn't match the old system so I manually change them in /etc/passwd
+
+**Note** pjmd was created at OMV insatll time. Minimac, beverly, appuser, jelly and pjmd2 were added afterward.
+
 ```
 pjmd:x:1000:100:philippe,,,:/home/pjmd:/usr/bin/bash
 minimac:x:1001:100::/home/minimac:/usr/bin/sh
@@ -163,6 +166,10 @@ appuser:x:1003:100::/home/appuser:/usr/bin/bash
 jelly:x:1004:100::/home/jelly:/usr/bin/bash      -->old 1005
 pjmd2:x:1005:100::/home/pjmd2:/usr/bin/bash
 ```
+
+#### pjmd home folder
+
+see [ctronics_ipcam](https://github.com/miscpj/ctronics_ipcam/tree/main/OMV/home/pjmd) to get an image of all scripts installed in this folder.
 
 #### OMV8 Issues
 
